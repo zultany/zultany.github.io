@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zultany — Home</title>
+  <meta name="description" content="Zultany — developer, maker, and projects showcase." />
+  <meta property="og:title" content="Zultany — Home" />
+  <meta property="og:description" content="Developer portfolio and project landing page for Zultany." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://github.com/zultany.png" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent1:#7c3aed;
+      --accent2:#06b6d4;
+      --glass: rgba(255,255,255,0.03);
+      --max-width:960px;
+      --radius:12px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", monospace;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #071028 0%, var(--bg) 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .container{
+      max-width:var(--max-width);
+      margin:32px auto;
+      padding:24px;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:inherit;
+    }
+    .avatar{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      overflow:hidden;
+      flex:0 0 56px;
+      border:2px solid rgba(255,255,255,0.06);
+      background:var(--glass);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:600;
+      font-size:14px;
+    }
+    nav a:hover{color:#fff}
+    main{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 6px 28px rgba(2,6,23,0.6);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:24px;
+      align-items:center;
+    }
+    .hero-left h1{
+      font-size:clamp(1.8rem, 4vw, 2.6rem);
+      margin:0 0 12px 0;
+      letter-spacing:-0.02em;
+      line-height:1.05;
+    }
+    .tagline{
+      color:var(--muted);
+      margin:0 0 18px 0;
+      font-size:1rem;
+    }
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:white;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      box-shadow: 0 6px 18px rgba(12,10,20,0.6);
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow:none;
+      font-weight:600;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      padding:18px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.02);
+      color:var(--muted);
+    }
+
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      justify-content:center;
+    }
+    .quick-stats{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .stat{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:10px 12px;
+      border-radius:10px;
+      font-weight:700;
+      color:#fff;
+      font-size:14px;
+    }
+
+    section{
+      margin-top:22px;
+      display:grid;
+      gap:18px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2,1fr);
+      gap:18px;
+    }
+    .project{
+      padding:14px;
+      border-radius:10px;
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    footer{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns: 1fr}
+      nav a{display:none}
+      .avatar{width:48px;height:48px}
+      .grid-2{grid-template-columns:1fr}
+    }
+
+    /* accessibility focus styles */
+    a:focus, button:focus {
+      outline:3px solid rgba(124,58,237,0.25);
+      outline-offset:3px;
+      border-radius:8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <a class="brand" href="#home" aria-label="Zultany home">
+        <div class="avatar" aria-hidden="true">
+          <img src="https://github.com/zultany.png" alt="Zultany avatar" />
+        </div>
+        <div>
+          <div style="font-weight:800">Zultany</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px">developer · maker</div>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <div class="hero" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <h1 id="hero-title">Hi — I'm Zultany. I build web experiences and small tools.</h1>
+          <p class="tagline">I focus on clean, fast, and accessible front-end work with an eye for simple deployments and developer DX.</p>
+
+          <div class="cta" role="group" aria-label="Primary actions">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn secondary" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <aside class="hero-right card" aria-labelledby="stats">
+          <div id="stats" style="font-weight:700;margin-bottom:6px">Quick links & stats</div>
+          <div class="quick-stats" role="list">
+            <div class="stat" role="listitem">Open Source</div>
+            <div class="stat" role="listitem">Blog</div>
+            <div class="stat" role="listitem">Contact</div>
+          </div>
+          <div style="margin-top:12px;color:var(--muted);font-size:14px">
+            Want something specific? Describe it in the contact section below.
+          </div>
+        </aside>
+      </div>
+
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading" style="margin:0 0 6px 0">About</h2>
+        <div class="card">
+          <p style="margin:0;color:var(--muted)">
+            I'm a developer interested in front-end engineering, performance, and developer tools. This is a minimal static landing page you can customise — add links to your projects, blog posts, or GitHub repos.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" style="margin:0 0 6px 0">Projects</h2>
+        <div class="grid-2">
+          <article class="project">
+            <strong>Project One</strong>
+            <p style="margin:6px 0 0 0;color:var(--muted)">Short one-liner about the project and why it matters. Link to the repo or demo.</p>
+          </article>
+
+          <article class="project">
+            <strong>Project Two</strong>
+            <p style="margin:6px 0 0 0;color:var(--muted)">Another short description. Replace this with real project info, screenshots, or badges.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" style="margin:0 0 6px 0">Contact</h2>
+        <div class="card" style="display:flex;flex-direction:column;gap:10px">
+          <p style="margin:0;color:var(--muted)">Email: <a href="mailto:hello@yourdomain.com" style="color:var(--accent2);text-decoration:none">hello@yourdomain.com</a></p>
+          <p style="margin:0;color:var(--muted)">GitHub: <a href="https://github.com/zultany" style="color:var(--accent2);text-decoration:none">@zultany</a></p>
+          <p style="margin:0;color:var(--muted)">Or open an issue in a repo to start a conversation about a project.</p>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <strong>Zultany</strong> — built with static HTML</div>
+        <div style="color:var(--muted)">Powered by GitHub Pages</div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
